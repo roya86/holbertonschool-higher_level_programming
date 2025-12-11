@@ -1,43 +1,21 @@
 #!/usr/bin/python3
-"""
-This module provides a function that adds two integers.
-"""
+"""Module for function of adding integer"""
 
 
 def add_integer(a, b=98):
-    """
-    Add two integers or floats, casted to integers.
+    """Adding integers function"""
 
-    Args:
-        a: first number (int or float)
-        b: second number (int or float)
-
-    Returns:
-        int: sum of a and b
-
-    Raises:
-        TypeError: if a or b are not integers/floats
-    """
-
-    # Validate a
+    # Checking if a and b are float or int
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-
-    # Validate b
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    # Reject NaN (NaN != NaN is always True)
-    if isinstance(a, float) and a != a:
-        raise TypeError("a must be an integer")
-    if isinstance(b, float) and b != b:
-        raise TypeError("b must be an integer")
+    # Casting to int if a and b is floating
+    if isinstance(a, float):
+        a = int(a)
+    if isinstance(b, float):
+        b = int(b)
 
-    # Reject infinity manually (no imports allowed)
-    if isinstance(a, float) and (a == float('inf') or a == -float('inf')):
-        raise OverflowError("cannot convert float infinity to integer")
-    if isinstance(b, float) and (b == float('inf') or b == -float('inf')):
-        raise OverflowError("cannot convert float infinity to integer")
-
-    # Now safe to cast to int
-    return int(a) + int(b)
+    # Return sum of a and b
+    return a + b
