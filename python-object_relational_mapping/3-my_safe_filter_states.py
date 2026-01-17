@@ -24,7 +24,6 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    # استخدام parameterized query للحماية
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cur.execute(query, (state_name,))
 
@@ -35,4 +34,3 @@ if __name__ == "__main__":
 
     cur.close()
     db.close()
-
