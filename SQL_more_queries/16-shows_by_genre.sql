@@ -1,3 +1,4 @@
+-- lists all shows and their genres
 SELECT
     tv_shows.title,
     tv_genres.name
