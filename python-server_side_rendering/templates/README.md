@@ -1,0 +1,1 @@
+Directory consists of templates.
